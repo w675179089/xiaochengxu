@@ -1,0 +1,14 @@
+<view class='main'>
+  <view class='list-banner'><image src='/image/list1.png'></image></view>
+  <view class='list-box'>
+    <view class='list-item' wx:for="{{listData}}" wx:key="index">
+      <navigator url='../details/details?datas={{item.id}}' hover-class='none' >
+        <image src='{{item.image}}'></image>
+        <view class='list-text'> <text>{{item.name}}</text></view>
+         <view class='list-text'> <text>{{item.price}}</text></view>
+      </navigator>
+    </view>
+     <!-- <view class='list-item' wx:for="{{listData}}" wx:key="index"></view> -->
+  </view>
+ 
+</view>

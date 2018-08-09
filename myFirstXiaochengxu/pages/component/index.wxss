@@ -1,0 +1,107 @@
+@import '../common/common.wxss';
+swiper{
+  width: 100%;
+  height: 420rpx;
+}
+swiper navigator{
+  width: 100%;
+  height: 100%
+}
+.slide{
+  width: 100%;
+  height: 100%;
+   object-fit: cover;
+}
+.search{
+  padding: 20rpx;
+}
+.search navigator{
+  width: 100%;
+  height: auto;
+
+}
+.search-box{
+  border: 2rpx solid #dddddd;
+  border-radius: 15rpx;
+  text-align: center;
+  /* font-size: 30rpx; */
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #aaaaaa;
+}
+.search icon{
+  margin-right: 6rpx;
+  width: 28rpx;
+  height: 28rpx;
+  margin-top:1rpx
+}
+.selected-topics-title{
+  padding: 38rpx 0;
+  text-align: center;
+  color: #ae9a75;
+}
+.selected-topics-top{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.selected-topics-top view{
+  width: 50%;
+  float: left;
+   height: 370rpx;
+}
+.selected-topics-top view navigator{
+  width: 100%;
+  height: 100%;
+}
+.selected-topics-top view image{
+  width: 100%;
+ height: 100%;
+}
+.selected-topics-bottom{
+  width: 100%;
+  overflow: hidden;
+  height: 374rpx;
+}
+.selected-topics-bottom navigator{height: 100%;}
+.selected-topics-bottom image{
+  width: 100%;
+  height: 100%;
+}
+.newest-text-box{
+  width: 100%;
+  height: auto;
+   padding:  35rpx 0;
+   text-align: center;
+   color: #AB956D
+}
+.newest-box{
+  padding: 0 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden
+}
+.newes-item{
+  background: #f6f6f6;
+  /* width: 50%; */
+  float: left;
+  margin: 0 20rpx 20rpx 0;
+  width:325rpx;
+  height:325rpx;
+  border-radius: 20rpx;
+  text-align: center;
+
+}
+.newes-item:nth-of-type(even){
+  margin-right: 0;
+}
+.newes-item navigator{
+  width:100%;height: 100%;
+}
+.newes-item navigator image{
+  width:190rpx;
+  height: 190rpx;
+  margin-top:20rpx;
+
+}
+.newes-item navigator text{font-size: 32rpx;}

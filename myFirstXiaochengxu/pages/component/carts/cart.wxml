@@ -1,0 +1,33 @@
+<view class='main' style='background:{{bg}};height:100%;'>
+  <view wx:if="{{item.length}}">
+    <view class='cart-box'>
+      <view class='cart-list' wx:for='{{item}}' wx:key="{{index}}">
+        <icon type='success' wx:if='{{item.selected}}' class='cart-select' bindtap='selected' data-index='{{index}}'></icon>
+        <icon type='circle' wx:else class='cart-select' bindtap='selected' data-index='{{index}}'></icon>
+        <navigator url='../details/details?id={{item.id}}'><image src="{{item.image}}" class='cart-image'></image></navigator>
+        <text class='shop-name'>{{item.name}}</text>
+        <text class='shop-price'>{{item.price}}</text>
+        <view class='cart-count'>
+          <text class='jian' bindtap='jian' data-index='{{index}}'>-</text>
+          <text class='number'>{{item.num}}</text>
+          <text class='add' bindtap='add' data-index='{{index}}'>+</text>
+        </view>
+        <text class='del' bindtap="deleteThis" data-index="{{index}}">x</text>
+      </view>
+    </view>
+    <view class='cart-footer'>
+      <icon type='success_circle' color='#fff' size='23' wx:if='{{selectAll}}' bindtap='selecrAll'></icon>
+      <icon type='circle' color='#fff' size='23' wx:else bindtap='selecrAll'></icon>      
+      <text style='margin-left:60rpx;'>全选</text>
+      <view class='go-order'>
+        <text class='total-price'>￥{{totalPrice}}</text>
+         <image src="/image/icon3.png" bindtap='toOrders'></image> 
+      </view>
+    </view>
+  </view>
+  <view wx:else class='noshop'>
+    <image src='/image/gouwuche.png'></image>
+    <view class='noshop-text'>购物车是空的哦，快去购物吧 </view>
+    <navigator class='guang'  hover-class='none' url='/pages/component/index' open-type='switchTab'>逛一逛</navigator>
+  </view> 
+</view>

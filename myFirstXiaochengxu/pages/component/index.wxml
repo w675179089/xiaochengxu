@@ -1,0 +1,42 @@
+<view class="main">
+  <swiper indicator-dots="true" autoplay='true' interval="{{interval}}" duration='{{duration}}' circular="true">
+    <swiper-item wx:for="{{swiperImg}}" wx:key="{{index}}">
+     <navigator url='details/details?datas={{item.details}}' hover-class='none' >
+        <image src="{{item.image}}" class="slide"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <view class='search'>
+    <navigator url="search/search" hover-class='none'>
+      <view class='search-box'>
+        <icon type="search" size='14'></icon>
+        搜索
+      </view>
+    </navigator>
+  </view>
+  <view class='selected-topics'>
+    <view class="selected-topics-title">
+      <text>精选主题</text>
+    </view>
+    <view class='selected-topics-top'>
+      <view class=''><navigator hover-class='none' url="list/list"><image src="/image/s1.png"></image></navigator> </view>
+      <view class=''><navigator hover-class='none' url="list/list"><image src="/image/s2.png"></image></navigator> </view>
+    </view>
+    <view class='selected-topics-bottom'>
+      <navigator hover-class='none' url="list/list"><image src='/image/s3.png'> </image></navigator>
+    </view>
+  </view>
+  <view class='newest'>
+    <view class='newest-text-box'><text class="newest-text">最近新品</text></view>
+    <view class='newest-box'>
+        <view class='newes-item' wx:for="{{homeJson}}" wx:key="index">
+          <navigator url='details/details?datas={{item.id}}' hover-class='none' >
+            <image src='{{item.image}}'></image>
+            <view><text>{{item.name}}</text></view>
+            <view><text>{{item.price}}</text></view>
+          </navigator>
+        </view>
+        <!-- <view class='newes-item'></view> -->
+    </view>
+  </view>
+</view>

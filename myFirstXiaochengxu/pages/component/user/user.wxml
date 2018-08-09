@@ -1,0 +1,40 @@
+<view class='main'>
+  <view class='user-header'>
+    <view class='img-box'>
+      <image src='{{userImage}}' bindtap='changeImg'></image>
+      <view class='edit-img'>编辑</view>
+    </view>
+    <view class='userName'><open-data type="userNickName"></open-data></view>
+    <view class='about'><navigator url='/pages/component/about/about' hover-class='none'>关于我</navigator></view>
+  </view>
+
+  <view class='address-box'>
+    <view class='address-title'><navigator url='/pages/component/address/address'>地址管理</navigator></view>
+    <view class='address-list' wx:if='{{hasAddress}}'>
+      <view>{{address.name}}</view>
+      <view>{{address.tel}}</view>
+      <view>{{address.address}}</view>
+    </view>
+    <view class='setting-address' wx:else>请设置地址</view>
+  </view>
+
+  <view class='order-box'>
+    <view class='order-title'>我的订单</view>
+    <block wx:if='{{payOrders.length}}'>
+      <view class='order-list' wx:for='{{payOrders}}'  wx:key="{{index}}">
+      <view class='order-num'>订单编号:</view>
+      <view class='order-details'>
+        <image src='{{item.image}}'></image>
+        <view class='order-shop-name'>{{item.name}}</view>
+        <view class='order-shop-num'>{{item.num}}</view>
+        <view class='orders-status'>已付款</view>
+        <view class='send-status'>{{sendStatus}}</view>
+      </view>
+    </view>
+    </block> 
+     <view wx:else class='noorders'>
+      <image src='/image/dingdan.png'></image>
+      <view class='no-text'>您暂无订单</view>
+     </view> 
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<view class='main'>
+  <view class='details-box'>
+    <image src="{{items.image}}" class='details-image'></image>
+     <navigator url='../carts/cart' open-type="switchTab" hover-class='none' class="carts-box {{scaleCart?'on':''}}">
+       <view>
+         <image src="/image/cart2.png" class="Carts"></image>
+         <text class='icon-num' wx:if='{{hasNum}}'>{{allNums}}</text>
+       </view>
+      </navigator>
+    <view class='details-option'>
+       <text class='details-add' bindtap='addcount'>+</text>
+       <text  class='details-num'>数量 {{num}}</text>
+        <text class='details-incre' bindtap='increS'>-</text>
+        <text class='add-cart' bindtap='addToCart'>加入购物车</text>
+        <image src='/image/cart1.png' bindtap='addToCart'></image>
+    </view>
+    <image wx:if='{{showIcon}}' class='addCaer-icon' src='/image/cart1.png'></image>
+    <view class='has-details'>有货</view>
+    <view class='details-title'>{{items.name}}</view>
+    <view class='details-price'>{{items.price}}</view>
+  </view>
+  <view class='details-nav'>
+    <view wx:for='{{navs}}' wx:key="{{index}}" data-index="{{index}}" bindtap='changeNav' class='nav-item {{curIndex == index?"on":""}}'>{{item.key}}</view>
+    <view class='nav-con'>{{curIndex == 0?items.details:curIndex == 1?items.option:items.service}}</view>
+  </view>
+</view>
